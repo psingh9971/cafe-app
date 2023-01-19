@@ -1,0 +1,25 @@
+High-level design:
+
+A database is used to store information about each comedian, including their name, popularity score, and any jokes they have submitted.
+
+A server-side script is used to handle the daily email sending process. This script will use the popularity scores to determine the top 20 and random 5 comedians to include in the email.
+
+The script will also handle the tracking of email opens and clicks, updating the popularity scores in the database accordingly.
+
+A separate script is used to send weekly update emails to the comedians, including information about their current popularity score.
+
+The script also listens for responses to these update emails, using an NLP tool to extract any jokes included in the response. These jokes are then added to the database and sent to users who have clicked on that comedian in the last month.
+
+Low-level design:
+
+The database is implemented using a relational database management system such as MySQL or PostgreSQL.
+
+The server-side script for handling daily email sending is implemented using a scripting language such as Python or JavaScript, and uses an email sending library such as SMTP or AWS SES.
+
+The script uses an API such as Google Analytics or Mixpanel to track email opens and clicks.
+
+The NLP tool used for extracting jokes from comedian responses is a pre-trained model such as NLTK or SpaCy.
+
+The system can be deployed on cloud infrastructure such as AWS or GCP, with load balancers and auto-scaling in place to handle the potential increase in traffic as the club opens more branches.
+
+A web interface or a mobile application is built for the comedians to see their popularity score, submit their jokes, and for the club to manage the comedians, send emails and see the analytics.
